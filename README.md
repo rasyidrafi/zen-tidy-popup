@@ -1,2 +1,2 @@
 # Zen Tidy Popup
-Modifies zen's popup panels, divider lines erased and traded with empty spacer, and generally makes the button more compact.
+Modifies popup panels, changing divider lines with empty spacer, and makes the button more compact.
