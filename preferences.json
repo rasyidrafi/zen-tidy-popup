@@ -3,7 +3,7 @@
         "property": "mod.tidypopup.usecustomhovercolor",
         "label": "Use custom hover color",
         "type": "checkbox",
-        "defaultValue": "false"
+        "defaultValue": false
     },
     {
         "property": "mod.tidypopup.hovercolor",
