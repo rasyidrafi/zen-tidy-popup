@@ -4,7 +4,7 @@ A clean theme extension for Zen Browser and Firefox that modifies popup panels b
 
 ## Features
 
-- 🎨 **Clean Popup Design** - Replaces harsh divider lines with subtle empty spacers
+- 🎨 **Clean Popup Design** - Replaces harsh divider lines with subtle empty spacers (optionally keep dividers)
 - 📏 **Compact Buttons** - Makes popup buttons more compact and visually appealing
 - 🌈 **Customizable Hover Colors** - Set custom hover colors for both light and dark themes
 - 🎯 **Rounded Corners** - Adds modern rounded corners to popup panels and buttons
@@ -52,19 +52,25 @@ This theme includes several customization options that can be configured through
 - **Button color when hovered (Light mode)**: Set custom hover color for light theme (default: `rgba(243,202,176,255)`)
 - **Button color when hovered (Dark mode)**: Set custom hover color for dark theme (default: `rgba(87,65,50,255)`)
 
+### Divider Lines
+
+- **Keep divider lines**: Toggle to keep or remove divider lines in popup panels (default: enabled)
+
 ### How to Configure
 
 1. Open Sine menu in your browser
 2. Navigate to the theme settings for "Zen Tidy Popup"
-3. Check the "Use custom hover color" box to enable custom colors
-4. Enter your preferred colors in rgba, hsla, or hex format
-5. Colors will automatically apply to light and dark themes respectively
+3. Adjust the following options as desired:
+   - Check or uncheck "Use custom hover color" to enable/disable custom colors
+   - Enter your preferred hover colors in rgba, hsla, or hex format for light and dark modes
+   - Check or uncheck "Keep divider lines" to show or hide popup dividers
+4. Changes will apply automatically
 
 ## What This Theme Does
 
 This theme enhances the visual appearance of popup panels by:
 
-- **Removing harsh dividers**: Replaces visible separator lines with subtle spacing
+- **Removing or keeping dividers**: Optionally replaces visible separator lines with subtle spacing, or keeps them based on your preference
 - **Compact button styling**: Makes buttons smaller and more refined with rounded corners
 - **Enhanced hover effects**: Adds customizable hover colors that work with both light and dark themes
 - **Modern panel design**: Applies rounded corners and improved shadows to popup panels
@@ -95,4 +101,4 @@ Modified and enhanced by [rasyidrafi](https://github.com/rasyidrafi)
 
 ---
 
-*Version 1.0.0 - Last updated: January 27, 2025*
+*Version 2.7.0 - Last updated: July 29, 2025*
