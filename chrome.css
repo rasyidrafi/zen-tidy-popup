@@ -8,9 +8,6 @@
       box-sizing: border-box !important;
       padding: 6px !important;
       color: var(--panel-color) !important;
-      /*   
-      background: var(--panel-background);
-  */
       border-radius: 15px !important;
       border: 2px solid color-mix(in hsl, var(--panel-border-color), transparent 70%) !important;
       width: var(--panel-width) !important;
@@ -40,50 +37,26 @@
     }
   }
 
-  /* Custom hover colors for light mode */
-  @media (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") and (prefers-color-scheme: light) {
+  /* Custom hover colors when enabled - uses CSS light-dark() function */
+  @media (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") {
     menu,
     menuitem,
     menucaption,
     :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
       &:not([disabled]):hover {
-        background-color: var(--mod-tidypopup-hovercolor-light) !important;
+        background-color: light-dark(var(--mod-tidypopup-hovercolor-light), var(--mod-tidypopup-hovercolor-dark)) !important;
       }
     }
   }
 
-  /* Custom hover colors for dark mode */
-  @media (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") and (prefers-color-scheme: dark) {
+  /* Default hover colors when custom colors are disabled */
+  @media not (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") {
     menu,
     menuitem,
     menucaption,
     :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
       &:not([disabled]):hover {
-        background-color: var(--mod-tidypopup-hovercolor-dark) !important;
-      }
-    }
-  }
-
-  /* Default hover colors when custom colors are disabled - light mode */
-  @media not (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") and (prefers-color-scheme: light) {
-    menu,
-    menuitem,
-    menucaption,
-    :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
-      &:not([disabled]):hover {
-        background-color: rgba(80, 80, 250, 1) !important;
-      }
-    }
-  }
-
-  /* Default hover colors when custom colors are disabled - dark mode */
-  @media not (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") and (prefers-color-scheme: dark) {
-    menu,
-    menuitem,
-    menucaption,
-    :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
-      &:not([disabled]):hover {
-        background-color: rgba(120, 120, 255, 1) !important;
+        background-color: light-dark(rgba(80, 80, 250, 1), rgba(120, 120, 255, 1)) !important;
       }
     }
   }
