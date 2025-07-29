@@ -25,33 +25,21 @@
     }
   }
 
-  /* Divider styles - shown by default, hidden when keepdividers is false */
+  /* When keepdividers is TRUE - just adjust spacing, let Firefox show dividers normally */
   @media (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
     panel toolbarseparator {
-      appearance: none !important;
-      min-height: 0 !important;
-      border-top: 1px solid var(--panel-border-color) !important;
       margin: 8px 4px !important;
-      padding: 0 !important;
-    }
-
-    menuseparator::before {
-      border-top: 1px solid var(--panel-border-color) !important;
     }
 
     #appMenu-zoom-controls {
-      border-top: 1px solid var(--panel-border-color) !important;
       padding-top: 12px !important;
       padding-inline: calc(var(--arrowpanel-menuitem-padding-inline) + var(--uc-arrowpanel-menuitem-margin-inline)) var(--uc-arrowpanel-menuitem-margin-inline) !important;
       padding-block: var(--uc-panel-zoom-padding-block) !important;
       margin: var(--panel-separator-margin-vertical) 0 calc(var(--panel-separator-margin-vertical) * -1) !important;
     }
-
-    #appMenu-zoom-controls>#appMenu-fullscreen-button2::before {
-      border-inline-start: 1px solid var(--panel-border-color) !important;
-    }
   }
 
+  /* When keepdividers is FALSE - hide them */
   @media not (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
     panel toolbarseparator {
       display: none !important;
