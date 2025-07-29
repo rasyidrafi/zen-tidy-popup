@@ -30,7 +30,7 @@
     }
   }
 
-  @media not (-moz-bool-pref: "mod.forkedtidypopup.disabledividers") {
+  @media not (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
     panel toolbarseparator {
       appearance: none !important;
       min-height: 0 !important;
@@ -65,7 +65,7 @@
     }
   }
 
-  @media (-moz-bool-pref: "mod.forkedtidypopup.disabledividers") {
+  @media (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
     #appMenu-zoom-controls {
       padding-top: 12px !important;
       padding-inline: calc(

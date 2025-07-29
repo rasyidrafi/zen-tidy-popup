@@ -18,9 +18,9 @@
         "defaultValue": "rgba(87,65,50,255)"
     },
     {
-        "property": "mod.forkedtidypopup.disabledividers",
-        "label": "Disable divider lines",
+        "property": "mod.forkedtidypopup.keepdividers",
+        "label": "Keep divider lines",
         "type": "checkbox",
-        "defaultValue": false
+        "defaultValue": true
     }
 ]
