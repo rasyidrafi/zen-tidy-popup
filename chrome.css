@@ -25,17 +25,17 @@
     }
   }
 
-  /* When keepdividers is TRUE - just adjust spacing, let Firefox show dividers normally */
+  /* When keepdividers is TRUE - remove vertical spacing completely */
   @media (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
     panel toolbarseparator {
-      margin: 8px 4px !important;
+      margin: 0 4px !important;
     }
 
     #appMenu-zoom-controls {
-      padding-top: 12px !important;
+      padding-top: 0 !important;
       padding-inline: calc(var(--arrowpanel-menuitem-padding-inline) + var(--uc-arrowpanel-menuitem-margin-inline)) var(--uc-arrowpanel-menuitem-margin-inline) !important;
       padding-block: var(--uc-panel-zoom-padding-block) !important;
-      margin: var(--panel-separator-margin-vertical) 0 calc(var(--panel-separator-margin-vertical) * -1) !important;
+      margin: 0 !important;
     }
   }
 
