@@ -30,41 +30,6 @@
     }
   }
 
-  @media not (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
-    panel toolbarseparator {
-      appearance: none !important;
-      min-height: 0 !important;
-      border-top: 3px solid
-        color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
-      margin: 8px 4px !important;
-      padding: 0 !important;
-    }
-
-    #appMenu-zoom-controls {
-      border-top: 3px solid
-        color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
-      padding-top: 12px !important;
-      padding-inline: calc(
-          var(--arrowpanel-menuitem-padding-inline) +
-            var(--uc-arrowpanel-menuitem-margin-inline)
-        )
-        var(--uc-arrowpanel-menuitem-margin-inline) !important;
-      padding-block: var(--uc-panel-zoom-padding-block) !important;
-      margin: var(--panel-separator-margin-vertical) 0
-        calc(var(--panel-separator-margin-vertical) * -1) !important;
-    }
-
-    #appMenu-zoom-controls > #appMenu-fullscreen-button2::before {
-      border-inline-start: 3px none
-        color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
-    }
-
-    menuseparator::before {
-      border-top: 3px solid
-        color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
-    }
-  }
-
   @media (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
     #appMenu-zoom-controls {
       padding-top: 12px !important;
@@ -79,19 +44,24 @@
     }
   }
 
-  :is(
-      panelview .toolbarbutton-1,
-      toolbarbutton.subviewbutton,
-      .widget-overflow-list .toolbarbutton-1,
-      .toolbaritem-combined-buttons:is(
-          :not([cui-areatype="toolbar"]),
-          [overflowedItem="true"]
+  @media not (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
+    panel toolbarseparator {
+      display: none !important;
+    }
+
+    #appMenu-zoom-controls {
+      padding-top: 6px !important;
+      padding-inline: calc(
+          var(--arrowpanel-menuitem-padding-inline) +
+            var(--uc-arrowpanel-menuitem-margin-inline)
         )
-        > toolbarbutton
-    ) {
-    &:not([disabled]) {
-      padding: 5px 10px !important;
-      border-radius: 8px !important;
+        var(--uc-arrowpanel-menuitem-margin-inline) !important;
+      padding-block: var(--uc-panel-zoom-padding-block) !important;
+      margin: 4px 0 !important;
+    }
+
+    menuseparator {
+      display: none !important;
     }
   }
 
