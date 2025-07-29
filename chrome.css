@@ -1,6 +1,4 @@
 @-moz-document url-prefix("chrome:") {
-
-  /* These are for the popups */
   menupopup,
   panel {
     &::part(content) {
@@ -37,26 +35,38 @@
     }
   }
 
-  /* Custom hover colors when enabled - uses CSS light-dark() function */
-  @media (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") {
+  @media (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") and (prefers-color-scheme: light) {
+
     menu,
     menuitem,
     menucaption,
     :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
       &:not([disabled]):hover {
-        background-color: light-dark(var(--mod-tidypopup-hovercolor-light), var(--mod-tidypopup-hovercolor-dark)) !important;
+        background-color: var(--mod-tidypopup-hovercolor-light) !important;
       }
     }
   }
 
-  /* Default hover colors when custom colors are disabled */
-  @media not (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") {
+  @media (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") and (prefers-color-scheme: dark) {
+
     menu,
     menuitem,
     menucaption,
     :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
       &:not([disabled]):hover {
-        background-color: light-dark(rgba(80, 80, 250, 1), rgba(120, 120, 255, 1)) !important;
+        background-color: var(--mod-tidypopup-hovercolor-dark) !important;
+      }
+    }
+  }
+
+  @media not (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") {
+
+    menu,
+    menuitem,
+    menucaption,
+    :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
+      &:not([disabled]):hover {
+        background-color: rgba(80, 80, 250, 1) !important;
       }
     }
   }
