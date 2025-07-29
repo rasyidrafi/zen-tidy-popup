@@ -1,0 +1,23 @@
+{
+  "id": "f966100a-4fed-4df5-a082-f001c5bd654e",
+  "name": "Zen Tidy Popup",
+  "description": "Modifies popup panels, changing divider lines with empty spacer, and makes the button more compact with customizable hover colors for light and dark themes.",
+  "homepage": "https://github.com/rasyidrafi/zen-tidy-popup/",
+  "image": "https://github.com/rasyidrafi/zen-tidy-popup/blob/main/thumbnail.png?raw=true",
+  "style": {
+    "chrome": "https://raw.githubusercontent.com/rasyidrafi/zen-tidy-popup/refs/heads/main/chrome.css"
+  },
+  "readme": "https://raw.githubusercontent.com/rasyidrafi/zen-tidy-popup/refs/heads/main/README.md",
+  "preferences": "https://raw.githubusercontent.com/rasyidrafi/zen-tidy-popup/refs/heads/main/preferences.json",
+  "author": "rasyidrafi",
+  "version": "1.0.0",
+  "tags": [
+    "Customization",
+    "Popup",
+    "Theme",
+    "UI"
+  ],
+  "createdAt": "2025-01-27",
+  "updatedAt": "2025-01-27",
+  "fork": ["zen", "firefox"]
+}

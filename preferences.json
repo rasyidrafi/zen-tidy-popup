@@ -1,20 +1,20 @@
 [   
     {
-        "property": "mod.tidypopup.usecustomhovercolor",
+        "property": "mod.forkedtidypopup.usecustomhovercolor",
         "label": "Use custom hover color",
         "type": "checkbox",
         "defaultValue": false
     },
     {
-        "property": "mod.tidypopup.hovercolor.light",
+        "property": "mod.forkedtidypopup.hovercolor.light",
         "label": "Button color when hovered (Light mode)",
         "type": "string",
-        "defaultValue": "rgba(80, 80, 250, 1)"
+        "defaultValue": "rgba(243,202,176,255)"
     },
     {
-        "property": "mod.tidypopup.hovercolor.dark",
+        "property": "mod.forkedtidypopup.hovercolor.dark",
         "label": "Button color when hovered (Dark mode)",  
         "type": "string",
-        "defaultValue": "rgba(80, 80, 250, 1)"
+        "defaultValue": "rgba(87,65,50,255)"
     }
 ]

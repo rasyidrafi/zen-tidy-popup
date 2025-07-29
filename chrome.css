@@ -1,5 +1,4 @@
 @-moz-document url-prefix("chrome:") {
-
   /* These are for the popups */
   menupopup,
   panel {
@@ -8,18 +7,24 @@
       box-sizing: border-box !important;
       padding: 6px !important;
       color: var(--panel-color) !important;
-      /*   
-      background: var(--panel-background);
-  */
       border-radius: 15px !important;
-      border: 2px solid color-mix(in hsl, var(--panel-border-color), transparent 70%) !important;
+      border: 2px solid
+        color-mix(in hsl, var(--panel-border-color), transparent 70%) !important;
       width: var(--panel-width) !important;
       box-shadow: var(--panel-shadow) !important;
       margin: var(--panel-shadow-margin) !important;
       min-width: 0 !important;
       min-height: 0 !important;
-      max-height: round(up, 100% - 2 * var(--panel-shadow-margin), 1px) !important;
-      max-width: round(up, 100% - 2 * var(--panel-shadow-margin), 1px) !important;
+      max-height: round(
+        up,
+        100% - 2 * var(--panel-shadow-margin),
+        1px
+      ) !important;
+      max-width: round(
+        up,
+        100% - 2 * var(--panel-shadow-margin),
+        1px
+      ) !important;
       overflow: clip !important;
       scrollbar-color: transparent !important;
     }
@@ -28,48 +33,88 @@
   panel toolbarseparator {
     appearance: none !important;
     min-height: 0 !important;
-    border-top: 3px solid color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
+    border-top: 3px solid
+      color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
     margin: 8px 4px !important;
     padding: 0 !important;
   }
 
-  :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
+  :is(
+      panelview .toolbarbutton-1,
+      toolbarbutton.subviewbutton,
+      .widget-overflow-list .toolbarbutton-1,
+      .toolbaritem-combined-buttons:is(
+          :not([cui-areatype="toolbar"]),
+          [overflowedItem="true"]
+        )
+        > toolbarbutton
+    ) {
     &:not([disabled]) {
       padding: 5px 10px !important;
       border-radius: 8px !important;
     }
   }
 
-  @media (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") and (prefers-color-scheme: light) {
+  @media (-moz-bool-pref: "mod.forkedtidypopup.usecustomhovercolor") {
+    @media (prefers-color-scheme: light) {
+      menu,
+      menuitem,
+      menucaption,
+      :is(
+          panelview .toolbarbutton-1,
+          toolbarbutton.subviewbutton,
+          .widget-overflow-list .toolbarbutton-1,
+          .toolbaritem-combined-buttons:is(
+              :not([cui-areatype="toolbar"]),
+              [overflowedItem="true"]
+            )
+            > toolbarbutton
+        ) {
+        &:not([disabled]):hover {
+          background-color: var(
+            --mod-forkedtidypopup-hovercolor-light
+          ) !important;
+        }
+      }
+    }
 
-    menu,
-    menuitem,
-    menucaption,
-    :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
-      &:not([disabled]):hover {
-        background-color: var(--mod-tidypopup-hovercolor-light) !important;
+    @media (prefers-color-scheme: dark) {
+      menu,
+      menuitem,
+      menucaption,
+      :is(
+          panelview .toolbarbutton-1,
+          toolbarbutton.subviewbutton,
+          .widget-overflow-list .toolbarbutton-1,
+          .toolbaritem-combined-buttons:is(
+              :not([cui-areatype="toolbar"]),
+              [overflowedItem="true"]
+            )
+            > toolbarbutton
+        ) {
+        &:not([disabled]):hover {
+          background-color: var(
+            --mod-forkedtidypopup-hovercolor-dark
+          ) !important;
+        }
       }
     }
   }
 
-  @media (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") and (prefers-color-scheme: dark) {
-
+  @media not (-moz-bool-pref: "mod.forkedtidypopup.usecustomhovercolor") {
     menu,
     menuitem,
     menucaption,
-    :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
-      &:not([disabled]):hover {
-        background-color: var(--mod-tidypopup-hovercolor-dark) !important;
-      }
-    }
-  }
-
-  @media not (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") {
-
-    menu,
-    menuitem,
-    menucaption,
-    :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
+    :is(
+        panelview .toolbarbutton-1,
+        toolbarbutton.subviewbutton,
+        .widget-overflow-list .toolbarbutton-1,
+        .toolbaritem-combined-buttons:is(
+            :not([cui-areatype="toolbar"]),
+            [overflowedItem="true"]
+          )
+          > toolbarbutton
+      ) {
       &:not([disabled]):hover {
         background-color: rgba(80, 80, 250, 1) !important;
       }
@@ -77,15 +122,22 @@
   }
 
   #appMenu-zoom-controls {
-    border-top: 3px solid color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
+    border-top: 3px solid
+      color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
     padding-top: 12px !important;
-    padding-inline: calc(var(--arrowpanel-menuitem-padding-inline) + var(--uc-arrowpanel-menuitem-margin-inline)) var(--uc-arrowpanel-menuitem-margin-inline) !important;
+    padding-inline: calc(
+        var(--arrowpanel-menuitem-padding-inline) +
+          var(--uc-arrowpanel-menuitem-margin-inline)
+      )
+      var(--uc-arrowpanel-menuitem-margin-inline) !important;
     padding-block: var(--uc-panel-zoom-padding-block) !important;
-    margin: var(--panel-separator-margin-vertical) 0 calc(var(--panel-separator-margin-vertical) * -1) !important;
+    margin: var(--panel-separator-margin-vertical) 0
+      calc(var(--panel-separator-margin-vertical) * -1) !important;
   }
 
-  #appMenu-zoom-controls>#appMenu-fullscreen-button2::before {
-    border-inline-start: 3px none color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
+  #appMenu-zoom-controls > #appMenu-fullscreen-button2::before {
+    border-inline-start: 3px none
+      color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
   }
 
   menu,
@@ -97,7 +149,8 @@
   }
 
   menuseparator::before {
-    border-top: 3px solid color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
+    border-top: 3px solid
+      color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
   }
 
   .panel-view-body-unscrollable {
