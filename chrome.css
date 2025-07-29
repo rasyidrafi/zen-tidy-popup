@@ -8,9 +8,6 @@
       box-sizing: border-box !important;
       padding: 6px !important;
       color: var(--panel-color) !important;
-      /*   
-      background: var(--panel-background);
-  */
       border-radius: 15px !important;
       border: 2px solid color-mix(in hsl, var(--panel-border-color), transparent 70%) !important;
       width: var(--panel-width) !important;
@@ -65,14 +62,13 @@
     }
   }
 
+  /* Apply styling to ALL items (including disabled) */
   :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
-    &:not([disabled]) {
-      padding: 5px 10px !important;
-      border-radius: 8px !important;
-    }
+    padding: 5px 10px !important;
+    border-radius: 8px !important;
   }
 
-  /* Custom hover colors when enabled */
+  /* Custom hover colors when enabled - only for non-disabled items */
   @media (-moz-bool-pref: "mod.forkedtidypopup.usecustomhovercolor") {
     /* Light mode hover color */
     @media (prefers-color-scheme: light) {
