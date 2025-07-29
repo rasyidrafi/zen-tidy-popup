@@ -30,17 +30,17 @@
     panel toolbarseparator {
       appearance: none !important;
       min-height: 0 !important;
-      border-top: 3px solid color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
+      border-top: 1px solid var(--panel-border-color) !important;
       margin: 8px 4px !important;
       padding: 0 !important;
     }
 
     menuseparator::before {
-      border-top: 3px solid color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
+      border-top: 1px solid var(--panel-border-color) !important;
     }
 
     #appMenu-zoom-controls {
-      border-top: 3px solid color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
+      border-top: 1px solid var(--panel-border-color) !important;
       padding-top: 12px !important;
       padding-inline: calc(var(--arrowpanel-menuitem-padding-inline) + var(--uc-arrowpanel-menuitem-margin-inline)) var(--uc-arrowpanel-menuitem-margin-inline) !important;
       padding-block: var(--uc-panel-zoom-padding-block) !important;
@@ -48,21 +48,17 @@
     }
 
     #appMenu-zoom-controls>#appMenu-fullscreen-button2::before {
-      border-inline-start: 3px none color-mix(in hsl, var(--panel-border-color), transparent 100%) !important;
+      border-inline-start: 1px solid var(--panel-border-color) !important;
     }
   }
 
   @media not (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
     panel toolbarseparator {
-      appearance: none !important;
-      min-height: 0 !important;
-      border: none !important;
-      margin: 4px !important;
-      padding: 0 !important;
+      display: none !important;
     }
 
     menuseparator::before {
-      border: none !important;
+      display: none !important;
     }
 
     #appMenu-zoom-controls {
@@ -74,7 +70,7 @@
     }
 
     #appMenu-zoom-controls>#appMenu-fullscreen-button2::before {
-      border-inline-start: none !important;
+      display: none !important;
     }
   }
 
