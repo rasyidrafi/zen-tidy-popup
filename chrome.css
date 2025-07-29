@@ -40,26 +40,50 @@
     }
   }
 
-  @media (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") {
-
+  /* Custom hover colors for light mode */
+  @media (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") and (prefers-color-scheme: light) {
     menu,
     menuitem,
     menucaption,
     :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
       &:not([disabled]):hover {
-        background-color: var(--mod-tidypopup-hovercolor) !important;
+        background-color: var(--mod-tidypopup-hovercolor-light) !important;
       }
     }
   }
 
-  @media not (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") {
+  /* Custom hover colors for dark mode */
+  @media (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") and (prefers-color-scheme: dark) {
+    menu,
+    menuitem,
+    menucaption,
+    :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
+      &:not([disabled]):hover {
+        background-color: var(--mod-tidypopup-hovercolor-dark) !important;
+      }
+    }
+  }
 
+  /* Default hover colors when custom colors are disabled - light mode */
+  @media not (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") and (prefers-color-scheme: light) {
     menu,
     menuitem,
     menucaption,
     :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
       &:not([disabled]):hover {
         background-color: rgba(80, 80, 250, 1) !important;
+      }
+    }
+  }
+
+  /* Default hover colors when custom colors are disabled - dark mode */
+  @media not (-moz-bool-pref: "mod.tidypopup.usecustomhovercolor") and (prefers-color-scheme: dark) {
+    menu,
+    menuitem,
+    menucaption,
+    :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton) {
+      &:not([disabled]):hover {
+        background-color: rgba(120, 120, 255, 1) !important;
       }
     }
   }

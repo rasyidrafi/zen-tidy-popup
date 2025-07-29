@@ -6,9 +6,15 @@
         "defaultValue": false
     },
     {
-        "property": "mod.tidypopup.hovercolor",
-        "label": "Button color when hovered",
+        "property": "mod.tidypopup.hovercolor.light",
+        "label": "Button hover color (Light mode)",
         "type": "string",
         "defaultValue": "rgba(80, 80, 250, 1)"
+    },
+    {
+        "property": "mod.tidypopup.hovercolor.dark",
+        "label": "Button hover color (Dark mode)",
+        "type": "string",
+        "defaultValue": "rgba(120, 120, 255, 1)"
     }
 ]
