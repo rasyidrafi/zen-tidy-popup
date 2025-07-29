@@ -13,7 +13,7 @@
     },
     {
         "property": "mod.tidypopup.hovercolor.dark",
-        "label": "Button color when hovered (Dark mode)",
+        "label": "Button color when hovered (Dark mode)",  
         "type": "string",
         "defaultValue": "rgba(80, 80, 250, 1)"
     }

@@ -1,4 +1,6 @@
 @-moz-document url-prefix("chrome:") {
+
+  /* These are for the popups */
   menupopup,
   panel {
     &::part(content) {
@@ -6,6 +8,9 @@
       box-sizing: border-box !important;
       padding: 6px !important;
       color: var(--panel-color) !important;
+      /*   
+      background: var(--panel-background);
+  */
       border-radius: 15px !important;
       border: 2px solid color-mix(in hsl, var(--panel-border-color), transparent 70%) !important;
       width: var(--panel-width) !important;
