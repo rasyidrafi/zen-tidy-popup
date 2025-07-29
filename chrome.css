@@ -25,10 +25,10 @@
     }
   }
 
-  /* When keepdividers is TRUE - remove vertical spacing completely */
+  /* When keepdividers is TRUE */
   @media (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
     panel toolbarseparator {
-      margin: 0 4px !important;
+      margin: 4px 4px !important;
     }
 
     #appMenu-zoom-controls {
@@ -43,10 +43,12 @@
   @media not (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
     panel toolbarseparator {
       display: none !important;
+      margin: 0 !important;
     }
 
     menuseparator::before {
       display: none !important;
+      margin: 0 !important;
     }
 
     #appMenu-zoom-controls {
@@ -59,6 +61,7 @@
 
     #appMenu-zoom-controls>#appMenu-fullscreen-button2::before {
       display: none !important;
+      margin: 0 !important;
     }
   }
 
