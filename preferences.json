@@ -16,5 +16,11 @@
         "label": "Button color when hovered (Dark mode)",  
         "type": "string",
         "defaultValue": "rgba(87,65,50,255)"
+    },
+    {
+        "property": "mod.forkedtidypopup.disabledividers",
+        "label": "Disable divider lines",
+        "type": "checkbox",
+        "defaultValue": false
     }
 ]
