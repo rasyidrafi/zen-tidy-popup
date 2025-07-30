@@ -140,8 +140,18 @@ panel {
   }
 }
 
+menuitem {
+  border-radius: 8px !important;
+  margin: 2px !important;
+
+  &:where([disabled="true"]) {
+    .menu-icon {
+      margin-left: -5px !important;
+    }
+  }
+}
+
 menu,
-menuitem,
 menucaption {
   border-radius: 8px !important;
   margin: 2px !important;
@@ -167,11 +177,11 @@ menucaption {
 #fxa-menu-header-title,
 #fxa-menu-header-description {
   margin-left: -30px !important;
-  padding-left: 16px !important;
+  padding-left: 15px !important;
 }
 
 /* Fix sync button */
 #PanelUI-fxa-menu-syncnow-button hbox label.syncnow-label {
   margin-left: -30px !important;
-  padding-left: 16px !important;
+  padding-left: 15px !important;
 }
