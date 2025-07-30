@@ -85,8 +85,15 @@ panel {
       )
       > toolbarbutton
   ) {
-  padding: 5px 10px !important;
   border-radius: 8px !important;
+
+  &:not(.remote-tabs-close-button) {
+    padding: 5px 10px !important;
+  }
+  
+  &.remote-tabs-close-button {
+    padding: 5px !important;
+  }
 }
 
 /* Custom hover colors when enabled - only for non-disabled items */
