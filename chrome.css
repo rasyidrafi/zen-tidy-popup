@@ -143,18 +143,14 @@ panel {
 menuitem {
   border-radius: 8px !important;
   margin: 2px !important;
-
-  &:where([disabled="true"]) {
-    .menu-icon {
-      margin-left: -5px !important;
-    }
-  }
+  padding: 5px 10px !important;
 }
 
 menu,
 menucaption {
   border-radius: 8px !important;
   margin: 2px !important;
+  padding: 5px 10px !important;
 }
 
 .panel-view-body-unscrollable {
