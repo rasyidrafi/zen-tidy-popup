@@ -158,86 +158,13 @@ menucaption {
   padding-left: 10px !important;
 }
 
-/* Fix for Firefox accounts panel - center user icon vertically */
-#fxa-manage-account-button {
-  display: flex !important;
-  align-items: center !important;
-  min-height: 48px !important;
-  padding-left: 36px !important; /* Add left padding to align with other buttons that have icons */
+/* Fix panel header h1 span pseudo-element */
+.panel-header h1 > span::before {
+  display: unset !important;
 }
 
-#fxa-manage-account-button > vbox {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: flex-start !important;
-  flex: 1 !important;
-}
-
-#fxa-manage-account-button label {
-  margin: 0 !important;
-  line-height: 1.2 !important;
-}
-
-#fxa-menu-header-title {
-  margin-bottom: 2px !important;
-}
-
-/* Fix sync now button alignment */
-#PanelUI-fxa-menu-syncnow-button {
-  display: flex !important;
-  align-items: center !important;
-  min-height: 48px !important;
-}
-
-#PanelUI-fxa-menu-syncnow-button > hbox {
-  display: flex !important;
-  align-items: center !important;
-  flex: 1 !important;
-}
-
-#PanelUI-fxa-menu-syncnow-button .syncnow-label {
-  margin: 0 !important;
-  line-height: 1.2 !important;
-}
-
-#PanelUI-appMenu-fxa-image-last-synced {
-  margin-right: 8px !important;
-}
-
-/* Fix remote tabs section styling */
-.PanelUI-tabitem-container {
-  margin-bottom: 4px !important;
-  display: flex !important;
-  align-items: center !important;
-}
-
-.PanelUI-tabitem-container:last-child {
-  margin-bottom: 0 !important;
-}
-
-.all-tabs-button {
-  flex: 1 !important;
-  margin-right: 4px !important;
-}
-
-.remote-tabs-close-button {
-  min-width: 24px !important;
-  width: 24px !important;
-  height: 24px !important;
-  padding: 2px !important;
-  border-radius: 4px !important;
-  margin: 0 !important;
-}
-
-.remote-tabs-close-button .toolbarbutton-icon {
-  width: 16px !important;
-  height: 16px !important;
-}
-
-/* Device label styling */
-#synced-tabs-client-0 {
-  margin-bottom: 8px !important;
-  font-weight: bold !important;
-  color: var(--panel-description-color, var(--text-color-deemphasized)) !important;
+/* Fix manage account */
+#fxa-menu-header-title, #fxa-menu-header-description {
+  margin-left: -30px !important;
+  padding-left: 16px !important;
 }
