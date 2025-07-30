@@ -164,7 +164,14 @@ menucaption {
 }
 
 /* Fix manage account */
-#fxa-menu-header-title, #fxa-menu-header-description {
+#fxa-menu-header-title,
+#fxa-menu-header-description {
+  margin-left: -30px !important;
+  padding-left: 16px !important;
+}
+
+/* Fix sync button */
+#PanelUI-fxa-menu-syncnow-button hbox label.syncnow-label {
   margin-left: -30px !important;
   padding-left: 16px !important;
 }
