@@ -25,6 +25,20 @@ panel {
   }
 }
 
+/* Preference-driven color mapping (moved near top) */
+@media (-moz-bool-pref: "mod.forkedtidypopup.usezenprimarycolor") {
+  :root {
+    --mod-forkedtidypopup-hovercolor-light: var(--zen-primary-color, var(--mod-forkedtidypopup-hovercolor-light, rgba(243,202,176,255)));
+    --mod-forkedtidypopup-hovercolor-dark: var(--zen-primary-color, var(--mod-forkedtidypopup-hovercolor-dark, rgba(87,65,50,255)));
+  }
+}
+@media not (-moz-bool-pref: "mod.forkedtidypopup.usezenprimarycolor") {
+  :root {
+    --mod-forkedtidypopup-hovercolor-light: var(--mod-forkedtidypopup-hovercolor-light, rgba(243,202,176,255));
+    --mod-forkedtidypopup-hovercolor-dark: var(--mod-forkedtidypopup-hovercolor-dark, rgba(87,65,50,255));
+  }
+}
+
 /* When keepdividers is TRUE */
 @media (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
   panel toolbarseparator {
@@ -98,7 +112,7 @@ panel {
   display: none !important;
 }
 
-/* Custom hover colors when enabled - only for non-disabled items */
+/* Custom hover colors when enabled */
 @media (-moz-bool-pref: "mod.forkedtidypopup.usecustomhovercolor") {
   /* Light mode hover color */
   @media (prefers-color-scheme: light) {
@@ -115,7 +129,9 @@ panel {
           )
           > toolbarbutton
       ) {
-      &:not([disabled]):hover {
+      &:hover {
+        /* If using Zen color: try --zen-primary-color, fallback to user pref light.
+           If not using Zen color: this var() will simply use the user pref light. */
         background-color: var(
           --mod-forkedtidypopup-hovercolor-light,
           rgba(243, 202, 176, 255)
@@ -139,7 +155,9 @@ panel {
           )
           > toolbarbutton
       ) {
-      &:not([disabled]):hover {
+      &:hover {
+        /* If using Zen color: try --zen-primary-color, fallback to user pref dark.
+           If not using Zen color: this var() will simply use the user pref dark. */
         background-color: var(
           --mod-forkedtidypopup-hovercolor-dark,
           rgba(87, 65, 50, 255)

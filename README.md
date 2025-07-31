@@ -7,6 +7,7 @@ A clean theme extension for Zen Browser and Firefox that modifies popup panels b
 - 🎨 **Clean Popup Design** - Replaces harsh divider lines with subtle empty spacers (optionally keep dividers)
 - 📏 **Compact Buttons** - Makes popup buttons more compact and visually appealing
 - 🌈 **Customizable Hover Colors** - Set custom hover colors for both light and dark themes
+- 🧩 **Zen Primary Color Integration** - Optionally use Zen Browser’s primary color as the hover color
 - 🎯 **Rounded Corners** - Adds modern rounded corners to popup panels and buttons
 - 🔧 **Universal Compatibility** - Works with both Zen Browser and Firefox
 - ⚡ **Lightweight** - Minimal CSS with no performance impact
@@ -49,8 +50,12 @@ This theme includes several customization options that can be configured through
 ### Custom Hover Colors
 
 - **Use custom hover color**: Toggle to enable/disable custom hover colors
-- **Button color when hovered (Light mode)**: Set custom hover color for light theme (default: `rgba(243,202,176,255)`)
-- **Button color when hovered (Dark mode)**: Set custom hover color for dark theme (default: `rgba(87,65,50,255)`)
+- **Use color from Zen Browser**: When enabled, hover color follows Zen’s primary color
+- If Zen color is enabled, manual color fields are hidden
+- If Zen color is disabled, you can set manual colors:
+  - **Button color when hovered (Light mode)**: default `rgba(243,202,176,255)`
+  - **Button color when hovered (Dark mode)**: default `rgba(87,65,50,255)`
+- Tip: If the Zen color looks incorrect, disable “Use color from Zen Browser” and set colors manually
 
 ### Divider Lines
 
@@ -62,7 +67,8 @@ This theme includes several customization options that can be configured through
 2. Navigate to the theme settings for "Zen Tidy Popup"
 3. Adjust the following options as desired:
    - Check or uncheck "Use custom hover color" to enable/disable custom colors
-   - Enter your preferred hover colors in rgba, hsla, or hex format for light and dark modes
+   - Check or uncheck "Use color from Zen Browser" to enable/disable Zen primary color integration
+   - Enter your preferred hover colors in rgba, hsla, or hex format for light and dark modes (if Zen color is disabled)
    - Check or uncheck "Keep divider lines" to show or hide popup dividers
 4. Changes will apply automatically
 
@@ -101,4 +107,4 @@ Modified and enhanced by [rasyidrafi](https://github.com/rasyidrafi)
 
 ---
 
-*Version 2.7.8 - Last updated: July 30, 2025*
+*Version 2.8.0 - Last updated: July 31, 2025*

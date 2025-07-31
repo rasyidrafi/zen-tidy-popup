@@ -6,16 +6,37 @@
         "defaultValue": false
     },
     {
+        "property": "mod.forkedtidypopup.usezenprimarycolor",
+        "label": "Use color from Zen Browser",
+        "type": "checkbox",
+        "defaultValue": false
+    },
+    {
+        "type": "text",
+        "label": "*If the color is not set correctly, it is recommended to uncheck 'Use color from Zen Browser' and define the color manually.*",
+        "conditions": [
+            { "if": { "property": "mod.forkedtidypopup.usezenprimarycolor", "value": true } }
+        ],
+        "margin": "0 0 8px 0",
+        "size": "12px"
+    },
+    {
         "property": "mod.forkedtidypopup.hovercolor.light",
         "label": "Button color when hovered (Light mode)",
         "type": "string",
-        "defaultValue": "rgba(243,202,176,255)"
+        "defaultValue": "rgba(243,202,176,255)",
+        "conditions": [
+            { "not": { "property": "mod.forkedtidypopup.usezenprimarycolor", "value": true } }
+        ]
     },
     {
         "property": "mod.forkedtidypopup.hovercolor.dark",
         "label": "Button color when hovered (Dark mode)",  
         "type": "string",
-        "defaultValue": "rgba(87,65,50,255)"
+        "defaultValue": "rgba(87,65,50,255)",
+        "conditions": [
+            { "not": { "property": "mod.forkedtidypopup.usezenprimarycolor", "value": true } }
+        ]
     },
     {
         "property": "mod.forkedtidypopup.keepdividers",
