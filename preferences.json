@@ -1,15 +1,9 @@
 [   
     {
-        "property": "mod.forkedtidypopup.usecustomhovercolor",
-        "label": "Use custom hover color",
-        "type": "checkbox",
-        "defaultValue": false
-    },
-    {
         "property": "mod.forkedtidypopup.usezenprimarycolor",
         "label": "Use color from Zen Browser",
         "type": "checkbox",
-        "defaultValue": false
+        "defaultValue": true
     },
     {
         "type": "text",

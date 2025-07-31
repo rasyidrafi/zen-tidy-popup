@@ -112,57 +112,52 @@ panel {
   display: none !important;
 }
 
-/* Custom hover colors when enabled */
-@media (-moz-bool-pref: "mod.forkedtidypopup.usecustomhovercolor") {
-  /* Light mode hover color */
-  @media (prefers-color-scheme: light) {
-    menu,
-    menuitem,
-    menucaption,
-    :is(
-        panelview .toolbarbutton-1,
-        toolbarbutton.subviewbutton,
-        .widget-overflow-list .toolbarbutton-1,
-        .toolbaritem-combined-buttons:is(
-            :not([cui-areatype="toolbar"]),
-            [overflowedItem="true"]
-          )
-          > toolbarbutton
-      ) {
-      &:hover {
-        /* If using Zen color: try --zen-primary-color, fallback to user pref light.
-           If not using Zen color: this var() will simply use the user pref light. */
-        background-color: var(
-          --mod-forkedtidypopup-hovercolor-light,
-          rgba(243, 202, 176, 255)
-        ) !important;
-      }
+/* Light mode hover color */
+@media (prefers-color-scheme: light) {
+  menu,
+  menuitem,
+  menucaption,
+  :is(
+      panelview .toolbarbutton-1,
+      toolbarbutton.subviewbutton,
+      .widget-overflow-list .toolbarbutton-1,
+      .toolbaritem-combined-buttons:is(
+          :not([cui-areatype="toolbar"]),
+          [overflowedItem="true"]
+        )
+        > toolbarbutton
+    ) {
+    &:hover {
+      /* Uses Zen primary when enabled, otherwise manual light color */
+      background-color: var(
+        --mod-forkedtidypopup-hovercolor-light,
+        rgba(243, 202, 176, 255)
+      ) !important;
     }
   }
+}
 
-  /* Dark mode hover color */
-  @media (prefers-color-scheme: dark) {
-    menu,
-    menuitem,
-    menucaption,
-    :is(
-        panelview .toolbarbutton-1,
-        toolbarbutton.subviewbutton,
-        .widget-overflow-list .toolbarbutton-1,
-        .toolbaritem-combined-buttons:is(
-            :not([cui-areatype="toolbar"]),
-            [overflowedItem="true"]
-          )
-          > toolbarbutton
-      ) {
-      &:hover {
-        /* If using Zen color: try --zen-primary-color, fallback to user pref dark.
-           If not using Zen color: this var() will simply use the user pref dark. */
-        background-color: var(
-          --mod-forkedtidypopup-hovercolor-dark,
-          rgba(87, 65, 50, 255)
-        ) !important;
-      }
+/* Dark mode hover color */
+@media (prefers-color-scheme: dark) {
+  menu,
+  menuitem,
+  menucaption,
+  :is(
+      panelview .toolbarbutton-1,
+      toolbarbutton.subviewbutton,
+      .widget-overflow-list .toolbarbutton-1,
+      .toolbaritem-combined-buttons:is(
+          :not([cui-areatype="toolbar"]),
+          [overflowedItem="true"]
+        )
+        > toolbarbutton
+    ) {
+    &:hover {
+      /* Uses Zen primary when enabled, otherwise manual dark color */
+      background-color: var(
+        --mod-forkedtidypopup-hovercolor-dark,
+        rgba(87, 65, 50, 255)
+      ) !important;
     }
   }
 }
@@ -203,6 +198,11 @@ menucaption {
   padding-left: 15px !important;
 }
 
+/* Fix sync button */
+#PanelUI-fxa-menu-syncnow-button hbox label.syncnow-label {
+  margin-left: -30px !important;
+  padding-left: 15px !important;
+}
 /* Fix sync button */
 #PanelUI-fxa-menu-syncnow-button hbox label.syncnow-label {
   margin-left: -30px !important;
