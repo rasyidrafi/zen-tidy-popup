@@ -45,42 +45,73 @@ If the theme is not available in the Sine theme store:
 
 ## Customization Options
 
-This theme includes several customization options that can be configured through Sine's preferences:
+These options map directly to Sine preferences and drive the CSS in chrome.css.
 
-### Custom Hover Colors
+### Toggles
 
-- **Use custom hover color**: Toggle to enable/disable custom hover colors
-- **Use color from Zen Browser**: When enabled, hover color follows Zen’s primary color
-- If Zen color is enabled, manual color fields are hidden
-- If Zen color is disabled, you can set manual colors:
-  - **Button color when hovered (Light mode)**: default `rgba(243,202,176,255)`
-  - **Button color when hovered (Dark mode)**: default `rgba(87,65,50,255)`
-- Tip: If the Zen color looks incorrect, disable “Use color from Zen Browser” and set colors manually
+- Enable/Disable Tidy Popup
+  - Property: mod.forkedtidypopup.usetidypopup
+  - Default: true
+- Keep divider lines
+  - Property: mod.forkedtidypopup.keepdividers
+  - Default: true
+  - When off, dividers are hidden and spacing is adjusted.
+- Enable/Disable custom hover color
+  - Property: mod.forkedtidypopup.usecustomhovercolor
+  - Default: true
+  - When off, no custom hover color is applied.
+- Use color from Zen Browser (overrides custom hover colors)
+  - Property: mod.forkedtidypopup.usezenprimarycolor
+  - Default: true
+  - If Zen primary color is available, it is used for both light and dark hover states.
 
-### Divider Lines
+### Hover Colors
 
-- **Keep divider lines**: Toggle to keep or remove divider lines in popup panels (default: enabled)
+Used only when mod.forkedtidypopup.usecustomhovercolor is true.
+
+- Button color when hovered (Light mode)
+  - Property: mod.forkedtidypopup.hovercolor.light
+  - Default: rgba(243,202,176,255)
+- Button color when hovered (Dark mode)
+  - Property: mod.forkedtidypopup.hovercolor.dark
+  - Default: rgba(87,65,50,255)
+
+Behavior and precedence:
+1) If usecustomhovercolor is false: no custom hover color is applied.
+2) If usecustomhovercolor is true AND usezenprimarycolor is true: Zen primary color is used for both light and dark.
+3) If usecustomhovercolor is true AND usezenprimarycolor is false: the manual colors above are used per scheme.
+
+Tip: If the Zen color looks incorrect or unavailable, disable “Use color from Zen Browser” and set manual colors.
 
 ### How to Configure
 
 1. Open Sine menu in your browser
-2. Navigate to the theme settings for "Zen Tidy Popup"
-3. Adjust the following options as desired:
-   - Check or uncheck "Use custom hover color" to enable/disable custom colors
-   - Check or uncheck "Use color from Zen Browser" to enable/disable Zen primary color integration
-   - Enter your preferred hover colors in rgba, hsla, or hex format for light and dark modes (if Zen color is disabled)
-   - Check or uncheck "Keep divider lines" to show or hide popup dividers
-4. Changes will apply automatically
+2. Go to the theme settings for "Zen Tidy Popup"
+3. Adjust:
+   - Enable/Disable Tidy Popup
+   - Keep divider lines
+   - Enable/Disable custom hover color
+   - Use color from Zen Browser
+   - Button color when hovered (Light mode)
+   - Button color when hovered (Dark mode)
+4. Changes apply automatically
 
 ## What This Theme Does
 
-This theme enhances the visual appearance of popup panels by:
+- Removing or keeping dividers: Hide dividers entirely or keep the native separators
+- Compact button styling: Smaller, rounded, consistent hit areas
+- Enhanced hover effects: Customizable, light/dark-aware, optional Zen color integration
+- Modern panel design: Rounded corners, refined borders and shadows
+- Better spacing: Optimized padding and margins for a cleaner look
 
-- **Removing or keeping dividers**: Optionally replaces visible separator lines with subtle spacing, or keeps them based on your preference
-- **Compact button styling**: Makes buttons smaller and more refined with rounded corners
-- **Enhanced hover effects**: Adds customizable hover colors that work with both light and dark themes
-- **Modern panel design**: Applies rounded corners and improved shadows to popup panels
-- **Better spacing**: Optimizes padding and margins for a cleaner look
+## How it works
+
+- chrome.css reads the prefs via @media (-moz-bool-pref: ...) to toggle features:
+  - mod.forkedtidypopup.usetidypopup gates all panel styling
+  - mod.forkedtidypopup.keepdividers toggles separator visibility and layout
+  - mod.forkedtidypopup.usecustomhovercolor enables hover color rules
+  - mod.forkedtidypopup.usezenprimarycolor switches hover color source to --zen-primary-color
+- Light/Dark hover colors automatically follow your system color scheme.
 
 ## Compatibility
 
@@ -107,4 +138,4 @@ Modified and enhanced by [rasyidrafi](https://github.com/rasyidrafi)
 
 ---
 
-*Version 2.8.1 - Last updated: July 31, 2025*
+*Version 2.8.2 - Last updated: July 31, 2025*

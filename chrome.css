@@ -1,122 +1,83 @@
-/* These are for the popups */
-menupopup,
-panel {
-  &::part(content) {
-    display: flex !important;
-    box-sizing: border-box !important;
-    padding: 6px !important;
-    color: var(--panel-color) !important;
-    border-radius: 15px !important;
-    border: 2px solid
-      color-mix(in hsl, var(--panel-border-color), transparent 70%) !important;
-    width: var(--panel-width) !important;
-    box-shadow: var(--panel-shadow) !important;
-    margin: var(--panel-shadow-margin) !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    max-height: round(
-      up,
-      100% - 2 * var(--panel-shadow-margin),
-      1px
-    ) !important;
-    max-width: round(up, 100% - 2 * var(--panel-shadow-margin), 1px) !important;
-    overflow: clip !important;
-    scrollbar-color: transparent !important;
-  }
-}
-
-/* Preference-driven color mapping (moved near top) */
-@media (-moz-bool-pref: "mod.forkedtidypopup.usezenprimarycolor") {
-  :root {
-    --mod-forkedtidypopup-hovercolor-light: var(--zen-primary-color, var(--mod-forkedtidypopup-hovercolor-light, rgba(243,202,176,255)));
-    --mod-forkedtidypopup-hovercolor-dark: var(--zen-primary-color, var(--mod-forkedtidypopup-hovercolor-dark, rgba(87,65,50,255)));
-  }
-}
-@media not (-moz-bool-pref: "mod.forkedtidypopup.usezenprimarycolor") {
-  :root {
-    --mod-forkedtidypopup-hovercolor-light: var(--mod-forkedtidypopup-hovercolor-light, rgba(243,202,176,255));
-    --mod-forkedtidypopup-hovercolor-dark: var(--mod-forkedtidypopup-hovercolor-dark, rgba(87,65,50,255));
-  }
-}
-
-/* When keepdividers is TRUE */
-@media (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
-  panel toolbarseparator {
-    margin: 4px 4px !important;
+/* Tidy Popup Styles - Only active when mod.forkedtidypopup.usetidypopup is true */
+@media (-moz-bool-pref: "mod.forkedtidypopup.usetidypopup") {
+  /* These are for the popups */
+  menupopup,
+  panel {
+    &::part(content) {
+      display: flex !important;
+      box-sizing: border-box !important;
+      padding: 6px !important;
+      color: var(--panel-color) !important;
+      border-radius: 15px !important;
+      border: 2px solid
+        color-mix(in hsl, var(--panel-border-color), transparent 70%) !important;
+      width: var(--panel-width) !important;
+      box-shadow: var(--panel-shadow) !important;
+      margin: var(--panel-shadow-margin) !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
+      max-height: round(
+        up,
+        100% - 2 * var(--panel-shadow-margin),
+        1px
+      ) !important;
+      max-width: round(up, 100% - 2 * var(--panel-shadow-margin), 1px) !important;
+      overflow: clip !important;
+      scrollbar-color: transparent !important;
+    }
   }
 
-  #appMenu-zoom-controls {
-    padding-top: 0 !important;
-    padding-inline: calc(
-        var(--arrowpanel-menuitem-padding-inline) +
-          var(--uc-arrowpanel-menuitem-margin-inline)
-      )
-      var(--uc-arrowpanel-menuitem-margin-inline) !important;
-    padding-block: var(--uc-panel-zoom-padding-block) !important;
-    margin: 0 !important;
-  }
-}
+  /* Divider Controls - Part of Tidy Popup */
+  /* When keepdividers is TRUE */
+  @media (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
+    panel toolbarseparator {
+      margin: 4px 4px !important;
+    }
 
-/* When keepdividers is FALSE - hide them */
-@media not (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
-  panel toolbarseparator {
-    display: none !important;
-    margin: 0 !important;
-  }
-
-  menuseparator::before {
-    display: none !important;
-    margin: 0 !important;
+    #appMenu-zoom-controls {
+      padding-top: 0 !important;
+      padding-inline: calc(
+          var(--arrowpanel-menuitem-padding-inline) +
+            var(--uc-arrowpanel-menuitem-margin-inline)
+        )
+        var(--uc-arrowpanel-menuitem-margin-inline) !important;
+      padding-block: var(--uc-panel-zoom-padding-block) !important;
+      margin: 0 !important;
+    }
   }
 
-  #appMenu-zoom-controls {
-    border-top: none !important;
-    padding-top: 6px !important;
-    padding-inline: calc(
-        var(--arrowpanel-menuitem-padding-inline) +
-          var(--uc-arrowpanel-menuitem-margin-inline)
-      )
-      var(--uc-arrowpanel-menuitem-margin-inline) !important;
-    padding-block: var(--uc-panel-zoom-padding-block) !important;
-    margin: calc(var(--panel-separator-margin-vertical) / 2) 0
-      calc(var(--panel-separator-margin-vertical) * -0.5) !important;
+  /* When keepdividers is FALSE - hide them */
+  @media not (-moz-bool-pref: "mod.forkedtidypopup.keepdividers") {
+    panel toolbarseparator {
+      display: none !important;
+      margin: 0 !important;
+    }
+
+    menuseparator::before {
+      display: none !important;
+      margin: 0 !important;
+    }
+
+    #appMenu-zoom-controls {
+      border-top: none !important;
+      padding-top: 6px !important;
+      padding-inline: calc(
+          var(--arrowpanel-menuitem-padding-inline) +
+            var(--uc-arrowpanel-menuitem-margin-inline)
+        )
+        var(--uc-arrowpanel-menuitem-margin-inline) !important;
+      padding-block: var(--uc-panel-zoom-padding-block) !important;
+      margin: calc(var(--panel-separator-margin-vertical) / 2) 0
+        calc(var(--panel-separator-margin-vertical) * -0.5) !important;
+    }
+
+    #appMenu-zoom-controls > #appMenu-fullscreen-button2::before {
+      display: none !important;
+      margin: 0 !important;
+    }
   }
 
-  #appMenu-zoom-controls > #appMenu-fullscreen-button2::before {
-    display: none !important;
-    margin: 0 !important;
-  }
-}
-
-/* Apply styling to ALL items (including disabled) */
-:is(
-    panelview .toolbarbutton-1,
-    toolbarbutton.subviewbutton,
-    .widget-overflow-list .toolbarbutton-1,
-    .toolbaritem-combined-buttons:is(
-        :not([cui-areatype="toolbar"]),
-        [overflowedItem="true"]
-      )
-      > toolbarbutton
-  ) {
-  border-radius: 8px !important;
-  padding: 5px 10px !important;
-}
-
-.remote-tabs-close-button {
-  border-radius: 8px !important;
-  padding: 5px !important;
-}
-
-.remote-tabs-close-button label.toolbarbutton-text {
-  display: none !important;
-}
-
-/* Light mode hover color */
-@media (prefers-color-scheme: light) {
-  menu,
-  menuitem,
-  menucaption,
+  /* Apply styling to ALL items (including disabled) */
   :is(
       panelview .toolbarbutton-1,
       toolbarbutton.subviewbutton,
@@ -127,84 +88,126 @@ panel {
         )
         > toolbarbutton
     ) {
-    &:hover {
-      /* Uses Zen primary when enabled, otherwise manual light color */
-      background-color: var(
-        --mod-forkedtidypopup-hovercolor-light,
-        rgba(243, 202, 176, 255)
-      ) !important;
-    }
+    border-radius: 8px !important;
+    padding: 5px 10px !important;
   }
-}
 
-/* Dark mode hover color */
-@media (prefers-color-scheme: dark) {
+  .remote-tabs-close-button {
+    border-radius: 8px !important;
+    padding: 5px !important;
+  }
+
+  .remote-tabs-close-button label.toolbarbutton-text {
+    display: none !important;
+  }
+
+  menuitem {
+    border-radius: 8px !important;
+    margin: 2px !important;
+    padding: 5px 10px !important;
+  }
+
   menu,
-  menuitem,
-  menucaption,
-  :is(
-      panelview .toolbarbutton-1,
-      toolbarbutton.subviewbutton,
-      .widget-overflow-list .toolbarbutton-1,
-      .toolbaritem-combined-buttons:is(
-          :not([cui-areatype="toolbar"]),
-          [overflowedItem="true"]
-        )
-        > toolbarbutton
-    ) {
-    &:hover {
-      /* Uses Zen primary when enabled, otherwise manual dark color */
-      background-color: var(
-        --mod-forkedtidypopup-hovercolor-dark,
-        rgba(87, 65, 50, 255)
-      ) !important;
-    }
+  menucaption {
+    border-radius: 8px !important;
+    margin: 2px !important;
+    padding: 5px 10px !important;
+  }
+
+  .panel-view-body-unscrollable {
+    border-radius: 8px !important;
+    background: var(--button-background-color-hover) !important;
+    align-items: center !important;
+    padding: 3px !important;
+  }
+
+  .downloadMainArea {
+    padding-left: 10px !important;
+  }
+
+  /* Fix panel header h1 span pseudo-element */
+  .panel-header h1 > span::before {
+    display: unset !important;
+  }
+
+  /* Fix manage account */
+  #fxa-menu-header-title,
+  #fxa-menu-header-description {
+    margin-left: -30px !important;
+    padding-left: 15px !important;
+  }
+
+  /* Fix sync button */
+  #PanelUI-fxa-menu-syncnow-button hbox label.syncnow-label {
+    margin-left: -30px !important;
+    padding-left: 15px !important;
   }
 }
 
-menuitem {
-  border-radius: 8px !important;
-  margin: 2px !important;
-  padding: 5px 10px !important;
-}
+/* Custom Hover Colors - Only active when mod.forkedtidypopup.usecustomhovercolor is true */
+@media (-moz-bool-pref: "mod.forkedtidypopup.usecustomhovercolor") {
+  /* Color variable setup with priority logic */
+  /* Priority 1: Use Zen primary color if usezenprimarycolor is true and zen color exists */
+  @media (-moz-bool-pref: "mod.forkedtidypopup.usezenprimarycolor") {
+    :root {
+      --mod-forkedtidypopup-hovercolor-light: var(--zen-primary-color, var(--mod-forkedtidypopup-hovercolor-light, rgba(243,202,176,255)));
+      --mod-forkedtidypopup-hovercolor-dark: var(--zen-primary-color, var(--mod-forkedtidypopup-hovercolor-dark, rgba(87,65,50,255)));
+    }
+  }
+  
+  /* Priority 2: Use custom defined colors if usezenprimarycolor is false */
+  @media not (-moz-bool-pref: "mod.forkedtidypopup.usezenprimarycolor") {
+    :root {
+      --mod-forkedtidypopup-hovercolor-light: var(--mod-forkedtidypopup-hovercolor-light, rgba(243,202,176,255));
+      --mod-forkedtidypopup-hovercolor-dark: var(--mod-forkedtidypopup-hovercolor-dark, rgba(87,65,50,255));
+    }
+  }
 
-menu,
-menucaption {
-  border-radius: 8px !important;
-  margin: 2px !important;
-  padding: 5px 10px !important;
-}
+  /* Light mode hover color */
+  @media (prefers-color-scheme: light) {
+    menu,
+    menuitem,
+    menucaption,
+    :is(
+        panelview .toolbarbutton-1,
+        toolbarbutton.subviewbutton,
+        .widget-overflow-list .toolbarbutton-1,
+        .toolbaritem-combined-buttons:is(
+            :not([cui-areatype="toolbar"]),
+            [overflowedItem="true"]
+          )
+          > toolbarbutton
+      ) {
+      &:hover {
+        background-color: var(
+          --mod-forkedtidypopup-hovercolor-light,
+          rgba(243, 202, 176, 255)
+        ) !important;
+      }
+    }
+  }
 
-.panel-view-body-unscrollable {
-  border-radius: 8px !important;
-  background: var(--button-background-color-hover) !important;
-  align-items: center !important;
-  padding: 3px !important;
-}
-
-.downloadMainArea {
-  padding-left: 10px !important;
-}
-
-/* Fix panel header h1 span pseudo-element */
-.panel-header h1 > span::before {
-  display: unset !important;
-}
-
-/* Fix manage account */
-#fxa-menu-header-title,
-#fxa-menu-header-description {
-  margin-left: -30px !important;
-  padding-left: 15px !important;
-}
-
-/* Fix sync button */
-#PanelUI-fxa-menu-syncnow-button hbox label.syncnow-label {
-  margin-left: -30px !important;
-  padding-left: 15px !important;
-}
-/* Fix sync button */
-#PanelUI-fxa-menu-syncnow-button hbox label.syncnow-label {
-  margin-left: -30px !important;
-  padding-left: 15px !important;
+  /* Dark mode hover color */
+  @media (prefers-color-scheme: dark) {
+    menu,
+    menuitem,
+    menucaption,
+    :is(
+        panelview .toolbarbutton-1,
+        toolbarbutton.subviewbutton,
+        .widget-overflow-list .toolbarbutton-1,
+        .toolbaritem-combined-buttons:is(
+            :not([cui-areatype="toolbar"]),
+            [overflowedItem="true"]
+          )
+          > toolbarbutton
+      ) {
+      &:hover {
+        background-color: var(
+          --mod-forkedtidypopup-hovercolor-dark,
+          rgba(87, 65, 50, 255)
+        ) !important;
+      }
+    }
+  }
 }
