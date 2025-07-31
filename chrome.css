@@ -150,16 +150,16 @@
   /* Priority 1: Use Zen primary color if usezenprimarycolor is true and zen color exists */
   @media (-moz-bool-pref: "mod.forkedtidypopup.usezenprimarycolor") {
     :root {
-      --mod-forkedtidypopup-hovercolor-light: var(--zen-primary-color, var(--mod-forkedtidypopup-hovercolor-light, rgba(243,202,176,255)));
-      --mod-forkedtidypopup-hovercolor-dark: var(--zen-primary-color, var(--mod-forkedtidypopup-hovercolor-dark, rgba(87,65,50,255)));
+      --mod-forkedtidypopup-hovercolor-light-final: var(--zen-primary-color, var(--mod-forkedtidypopup-hovercolor-light, rgba(243,202,176,255)));
+      --mod-forkedtidypopup-hovercolor-dark-final: var(--zen-primary-color, var(--mod-forkedtidypopup-hovercolor-dark, rgba(87,65,50,255)));
     }
   }
   
   /* Priority 2: Use custom defined colors if usezenprimarycolor is false */
   @media not (-moz-bool-pref: "mod.forkedtidypopup.usezenprimarycolor") {
     :root {
-      --mod-forkedtidypopup-hovercolor-light: var(--mod-forkedtidypopup-hovercolor-light, rgba(243,202,176,255));
-      --mod-forkedtidypopup-hovercolor-dark: var(--mod-forkedtidypopup-hovercolor-dark, rgba(87,65,50,255));
+      --mod-forkedtidypopup-hovercolor-light-final: var(--mod-forkedtidypopup-hovercolor-light, rgba(243,202,176,255));
+      --mod-forkedtidypopup-hovercolor-dark-final: var(--mod-forkedtidypopup-hovercolor-dark, rgba(87,65,50,255));
     }
   }
 
@@ -180,7 +180,7 @@
       ) {
       &:hover {
         background-color: var(
-          --mod-forkedtidypopup-hovercolor-light,
+          --mod-forkedtidypopup-hovercolor-light-final,
           rgba(243, 202, 176, 255)
         ) !important;
       }
@@ -204,7 +204,7 @@
       ) {
       &:hover {
         background-color: var(
-          --mod-forkedtidypopup-hovercolor-dark,
+          --mod-forkedtidypopup-hovercolor-dark-final,
           rgba(87, 65, 50, 255)
         ) !important;
       }

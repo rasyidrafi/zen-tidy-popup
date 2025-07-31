@@ -138,4 +138,4 @@ Modified and enhanced by [rasyidrafi](https://github.com/rasyidrafi)
 
 ---
 
-*Version 2.8.2 - Last updated: July 31, 2025*
+*Version 2.8.3 - Last updated: July 31, 2025*
