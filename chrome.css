@@ -21,7 +21,11 @@
         100% - 2 * var(--panel-shadow-margin),
         1px
       ) !important;
-      max-width: round(up, 100% - 2 * var(--panel-shadow-margin), 1px) !important;
+      max-width: round(
+        up,
+        100% - 2 * var(--panel-shadow-margin),
+        1px
+      ) !important;
       overflow: clip !important;
       scrollbar-color: transparent !important;
     }
@@ -35,14 +39,8 @@
     }
 
     #appMenu-zoom-controls {
-      padding-top: 0 !important;
-      padding-inline: calc(
-          var(--arrowpanel-menuitem-padding-inline) +
-            var(--uc-arrowpanel-menuitem-margin-inline)
-        )
-        var(--uc-arrowpanel-menuitem-margin-inline) !important;
-      padding-block: var(--uc-panel-zoom-padding-block) !important;
-      margin: 0 !important;
+      margin: 4px 4px -4px 4px !important;
+      padding: 1px 0px 0px 0px !important;
     }
   }
 
@@ -60,21 +58,23 @@
 
     #appMenu-zoom-controls {
       border-top: none !important;
-      padding-top: 6px !important;
-      padding-inline: calc(
-          var(--arrowpanel-menuitem-padding-inline) +
-            var(--uc-arrowpanel-menuitem-margin-inline)
-        )
-        var(--uc-arrowpanel-menuitem-margin-inline) !important;
-      padding-block: var(--uc-panel-zoom-padding-block) !important;
-      margin: calc(var(--panel-separator-margin-vertical) / 2) 0
-        calc(var(--panel-separator-margin-vertical) * -0.5) !important;
+      margin: 4px 0 0 0 !important;
+      padding: 0px !important;
     }
 
     #appMenu-zoom-controls > #appMenu-fullscreen-button2::before {
       display: none !important;
       margin: 0 !important;
     }
+  }
+
+  #appMenu-zoomReset-button2 {
+    margin: 2px 0px !important;
+    padding: 0px 5px !important;
+  }
+
+  #appMenu-zoom-controls label {
+    margin-left: -5px !important;
   }
 
   /* Apply styling to ALL items (including disabled) */
@@ -90,6 +90,7 @@
     ) {
     border-radius: 8px !important;
     padding: 5px 10px !important;
+    margin: var(--arrowpanel-menuitem-margin) !important;
   }
 
   .remote-tabs-close-button {
@@ -103,14 +104,19 @@
 
   menuitem {
     border-radius: 8px !important;
-    margin: 2px !important;
+    margin: var(--arrowpanel-menuitem-margin) !important;
     padding: 5px 10px !important;
+  }
+
+  menuitem.menuitem-iconic,
+  menu.menu-iconic {
+    padding: 5px 0px !important;
   }
 
   menu,
   menucaption {
     border-radius: 8px !important;
-    margin: 2px !important;
+    margin: var(--arrowpanel-menuitem-margin) !important;
     padding: 5px 10px !important;
   }
 
@@ -142,6 +148,55 @@
     margin-left: -30px !important;
     padding-left: 15px !important;
   }
+
+  /* Tidy Up Extenstion */
+  @media (-moz-bool-pref: "mod.forkedtidypopup.usetidyextension") {
+    #unified-extensions-view {
+      width: var(--menu-panel-width) !important;
+    }
+
+    #unified-extensions-messages-container {
+      margin: 0px !important;
+    }
+
+    #unified-extensions-area toolbaritem {
+      margin: 0px !important;
+    }
+
+    #unified-extensions-area
+      toolbaritem
+      box
+      toolbarbutton.unified-extensions-item-action-button
+      vbox.unified-extensions-item-contents
+      deck {
+      display: none !important;
+    }
+
+    #unified-extensions-area
+      toolbaritem
+      box
+      toolbarbutton.unified-extensions-item-action-button
+      stack.toolbarbutton-badge-stack
+      image {
+      height: 16px !important;
+      width: 16px !important;
+    }
+
+    #unified-extensions-area
+      toolbaritem
+      box
+      toolbarbutton.unified-extensions-item-menu-button {
+      margin-left: 0px !important;
+    }
+
+    #unified-extensions-area
+      toolbaritem
+      box
+      toolbarbutton.unified-extensions-item-menu-button
+      image {
+      padding: 0px !important;
+    }
+  }
 }
 
 /* Custom Hover Colors - Only active when mod.forkedtidypopup.usecustomhovercolor is true */
@@ -150,16 +205,28 @@
   /* Priority 1: Use Zen primary color if usezenprimarycolor is true and zen color exists */
   @media (-moz-bool-pref: "mod.forkedtidypopup.usezenprimarycolor") {
     :root {
-      --mod-forkedtidypopup-hovercolor-light-final: var(--zen-primary-color, var(--mod-forkedtidypopup-hovercolor-light, rgba(243,202,176,255)));
-      --mod-forkedtidypopup-hovercolor-dark-final: var(--zen-primary-color, var(--mod-forkedtidypopup-hovercolor-dark, rgba(87,65,50,255)));
+      --mod-forkedtidypopup-hovercolor-light-final: var(
+        --zen-primary-color,
+        var(--mod-forkedtidypopup-hovercolor-light, rgba(243, 202, 176, 255))
+      );
+      --mod-forkedtidypopup-hovercolor-dark-final: var(
+        --zen-primary-color,
+        var(--mod-forkedtidypopup-hovercolor-dark, rgba(87, 65, 50, 255))
+      );
     }
   }
-  
+
   /* Priority 2: Use custom defined colors if usezenprimarycolor is false */
   @media not (-moz-bool-pref: "mod.forkedtidypopup.usezenprimarycolor") {
     :root {
-      --mod-forkedtidypopup-hovercolor-light-final: var(--mod-forkedtidypopup-hovercolor-light, rgba(243,202,176,255));
-      --mod-forkedtidypopup-hovercolor-dark-final: var(--mod-forkedtidypopup-hovercolor-dark, rgba(87,65,50,255));
+      --mod-forkedtidypopup-hovercolor-light-final: var(
+        --mod-forkedtidypopup-hovercolor-light,
+        rgba(243, 202, 176, 255)
+      );
+      --mod-forkedtidypopup-hovercolor-dark-final: var(
+        --mod-forkedtidypopup-hovercolor-dark,
+        rgba(87, 65, 50, 255)
+      );
     }
   }
 

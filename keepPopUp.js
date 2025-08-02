@@ -23,3 +23,11 @@ document.getElementById('placesContext').addEventListener('popuphiding', functio
     return false;
   }
 });
+
+document.getElementById('contentAreaContextMenu').addEventListener('popuphiding', function(event) {
+  // Check if the hiding is due to window focus change
+  if (event.detail !== 1) { // 1 = user initiated close
+    event.preventDefault();
+    return false;
+  }
+});

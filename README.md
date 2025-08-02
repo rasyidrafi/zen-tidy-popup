@@ -10,6 +10,7 @@ A clean theme extension for Zen Browser and Firefox that modifies popup panels b
 - 🧩 **Zen Primary Color Integration** - Optionally use Zen Browser’s primary color as the hover color
 - 🎯 **Rounded Corners** - Adds modern rounded corners to popup panels and buttons
 - 🔧 **Universal Compatibility** - Works with both Zen Browser and Firefox
+- 🧩 **Tidy Extension Panel** - Cleans up the unified extensions popup for a more organized look
 - ⚡ **Lightweight** - Minimal CSS with no performance impact
 
 ## Prerequisites
@@ -64,6 +65,10 @@ These options map directly to Sine preferences and drive the CSS in chrome.css.
   - Property: mod.forkedtidypopup.usezenprimarycolor
   - Default: true
   - If Zen primary color is available, it is used for both light and dark hover states.
+- Enable/Disable Tidy Extension
+  - Property: mod.forkedtidypopup.usetidyextension
+  - Default: true
+  - When enabled, applies clean styling to the unified extensions popup panel.
 
 ### Hover Colors
 
@@ -94,6 +99,7 @@ Tip: If the Zen color looks incorrect or unavailable, disable “Use color from 
    - Use color from Zen Browser
    - Button color when hovered (Light mode)
    - Button color when hovered (Dark mode)
+   - Enable/Disable Tidy Extension
 4. Changes apply automatically
 
 ## What This Theme Does
@@ -103,6 +109,7 @@ Tip: If the Zen color looks incorrect or unavailable, disable “Use color from 
 - Enhanced hover effects: Customizable, light/dark-aware, optional Zen color integration
 - Modern panel design: Rounded corners, refined borders and shadows
 - Better spacing: Optimized padding and margins for a cleaner look
+- Tidy extensions panel: Streamlined unified extensions popup with improved layout and spacing
 
 ## How it works
 
@@ -111,6 +118,7 @@ Tip: If the Zen color looks incorrect or unavailable, disable “Use color from 
   - mod.forkedtidypopup.keepdividers toggles separator visibility and layout
   - mod.forkedtidypopup.usecustomhovercolor enables hover color rules
   - mod.forkedtidypopup.usezenprimarycolor switches hover color source to --zen-primary-color
+  - mod.forkedtidypopup.usetidyextension applies specialized styling to the extensions popup
 - Light/Dark hover colors automatically follow your system color scheme.
 
 ## Compatibility
@@ -138,4 +146,4 @@ Modified and enhanced by [rasyidrafi](https://github.com/rasyidrafi)
 
 ---
 
-*Version 2.8.3 - Last updated: July 31, 2025*
+*Version 2.8.4 - Last updated: August 2, 2025*
