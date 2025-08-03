@@ -197,6 +197,13 @@
       padding: 0px !important;
     }
   }
+
+  /* Center Bookmark Bar - Only active when mod.forkedtidypopup.usecenterbookmarkbar is true */
+  @media (-moz-bool-pref: "mod.forkedtidypopup.usecenterbookmarkbar") {
+    #PlacesToolbarItems {
+      justify-content: center !important;
+    }
+  }
 }
 
 /* Custom Hover Colors - Only active when mod.forkedtidypopup.usecustomhovercolor is true */

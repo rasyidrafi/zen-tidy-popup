@@ -40,5 +40,11 @@
     "label": "Enable/Disable Tidy Extension",
     "type": "checkbox",
     "defaultValue": true
+  },
+  {
+    "property": "mod.forkedtidypopup.usecenterbookmarkbar",
+    "label": "Enable/Disable Center Bookmark Bar",
+    "type": "checkbox",
+    "defaultValue": true
   }
 ]

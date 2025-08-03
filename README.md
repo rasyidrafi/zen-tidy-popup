@@ -7,10 +7,11 @@ A clean theme extension for Zen Browser and Firefox that modifies popup panels b
 - 🎨 **Clean Popup Design** - Replaces harsh divider lines with subtle empty spacers (optionally keep dividers)
 - 📏 **Compact Buttons** - Makes popup buttons more compact and visually appealing
 - 🌈 **Customizable Hover Colors** - Set custom hover colors for both light and dark themes
-- 🧩 **Zen Primary Color Integration** - Optionally use Zen Browser’s primary color as the hover color
+- 🧩 **Zen Primary Color Integration** - Optionally use Zen Browser's primary color as the hover color
 - 🎯 **Rounded Corners** - Adds modern rounded corners to popup panels and buttons
 - 🔧 **Universal Compatibility** - Works with both Zen Browser and Firefox
 - 🧩 **Tidy Extension Panel** - Cleans up the unified extensions popup for a more organized look
+- 📚 **Center Bookmark Bar** - Centers bookmark items in the bookmark toolbar for a balanced layout
 - ⚡ **Lightweight** - Minimal CSS with no performance impact
 
 ## Prerequisites
@@ -69,6 +70,10 @@ These options map directly to Sine preferences and drive the CSS in chrome.css.
   - Property: mod.forkedtidypopup.usetidyextension
   - Default: true
   - When enabled, applies clean styling to the unified extensions popup panel.
+- Enable/Disable Center Bookmark Bar
+  - Property: mod.forkedtidypopup.usecenterbookmarkbar
+  - Default: true
+  - When enabled, centers bookmark items in the bookmark toolbar for a more balanced layout.
 
 ### Hover Colors
 
@@ -100,6 +105,7 @@ Tip: If the Zen color looks incorrect or unavailable, disable “Use color from 
    - Button color when hovered (Light mode)
    - Button color when hovered (Dark mode)
    - Enable/Disable Tidy Extension
+   - Enable/Disable Center Bookmark Bar
 4. Changes apply automatically
 
 ## What This Theme Does
@@ -110,6 +116,7 @@ Tip: If the Zen color looks incorrect or unavailable, disable “Use color from 
 - Modern panel design: Rounded corners, refined borders and shadows
 - Better spacing: Optimized padding and margins for a cleaner look
 - Tidy extensions panel: Streamlined unified extensions popup with improved layout and spacing
+- Centered bookmark bar: Bookmark items are centered for a more balanced and aesthetically pleasing layout
 
 ## How it works
 
@@ -119,6 +126,7 @@ Tip: If the Zen color looks incorrect or unavailable, disable “Use color from 
   - mod.forkedtidypopup.usecustomhovercolor enables hover color rules
   - mod.forkedtidypopup.usezenprimarycolor switches hover color source to --zen-primary-color
   - mod.forkedtidypopup.usetidyextension applies specialized styling to the extensions popup
+  - mod.forkedtidypopup.usecenterbookmarkbar centers bookmark items in the toolbar
 - Light/Dark hover colors automatically follow your system color scheme.
 
 ## Compatibility
@@ -146,4 +154,4 @@ Modified and enhanced by [rasyidrafi](https://github.com/rasyidrafi)
 
 ---
 
-*Version 2.8.6 - Last updated: August 3, 2025*
+*Version 2.8.7 - Last updated: August 3, 2025*

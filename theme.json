@@ -10,7 +10,7 @@
   "readme": "https://raw.githubusercontent.com/rasyidrafi/zen-tidy-popup/refs/heads/main/README.md",
   "preferences": "https://raw.githubusercontent.com/rasyidrafi/zen-tidy-popup/refs/heads/main/preferences.json",
   "author": "rasyidrafi",
-  "version": "2.8.6",
+  "version": "2.8.7",
   "tags": [
     "Customization",
     "Popup",
@@ -18,6 +18,6 @@
     "UI"
   ],
   "createdAt": "2025-01-27",
-  "updatedAt": "2025-08-02",
+  "updatedAt": "2025-08-03",
   "fork": ["zen", "firefox"]
 }
