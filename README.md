@@ -146,4 +146,4 @@ Modified and enhanced by [rasyidrafi](https://github.com/rasyidrafi)
 
 ---
 
-*Version 2.8.5 - Last updated: August 2, 2025*
+*Version 2.8.6 - Last updated: August 3, 2025*
