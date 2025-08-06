@@ -46,5 +46,11 @@
     "label": "Enable/Disable Center Bookmark Bar",
     "type": "checkbox",
     "defaultValue": true
+  },
+  {
+    "property": "mod.forkedtidypopup.hidemoreiconbookmark",
+    "label": "Hide More Icon on Bookmark Bar",
+    "type": "checkbox",
+    "defaultValue": true
   }
 ]

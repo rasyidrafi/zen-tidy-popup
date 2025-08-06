@@ -204,6 +204,13 @@
       justify-content: center !important;
     }
   }
+
+  @media (-moz-bool-pref: "mod.forkedtidypopup.hidemoreiconbookmark") {
+    #PlacesChevron {
+      display: none !important;
+      margin: 0 !important;
+    }
+  }
 }
 
 /* Custom Hover Colors - Only active when mod.forkedtidypopup.usecustomhovercolor is true */

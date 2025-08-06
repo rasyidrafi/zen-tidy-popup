@@ -11,10 +11,6 @@ document.querySelectorAll('menupopup, panel').forEach(popup => {
   popup.setAttribute('noautohide', 'true');
 });
 
-// Or target specific popup types
-document.querySelectorAll('panel[type="arrow"]').forEach(panel => {
-  panel.setAttribute('noautohide', 'true');
-});
 
 document.getElementById('placesContext').addEventListener('popuphiding', function(event) {
   // Check if the hiding is due to window focus change
