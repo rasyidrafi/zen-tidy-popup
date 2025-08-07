@@ -153,5 +153,3 @@ This project is open source and available under standard open source terms.
 Modified and enhanced by [rasyidrafi](https://github.com/rasyidrafi)
 
 ---
-
-*Version 2.8.8 - Last updated: August 6, 2025*

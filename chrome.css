@@ -291,4 +291,11 @@
       }
     }
   }
+
+  @media (-moz-bool-pref: "mod.forkedtidypopup.hidesidebaronfullscreen") {
+    #main-window[inDOMFullscreen="true"] #sidebar-box, 
+    #main-window[inDOMFullscreen="true"] #sidebar-splitter {
+      display: none !important;
+    }
+  }
 }

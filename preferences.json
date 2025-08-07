@@ -52,5 +52,11 @@
     "label": "Hide More Icon on Bookmark Bar",
     "type": "checkbox",
     "defaultValue": true
+  },
+  {
+    "property": "mod.forkedtidypopup.hidesidebaronfullscreen",
+    "label": "Hide Sidebar on Fullscreen (Fix Bug)",
+    "type": "checkbox",
+    "defaultValue": true
   }
 ]
