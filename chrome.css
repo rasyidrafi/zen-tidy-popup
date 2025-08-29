@@ -87,7 +87,7 @@
           [overflowedItem="true"]
         )
         > toolbarbutton
-    ) {
+    ):not(.all-tabs-button):not(.remote-tabs-close-button) {
     border-radius: 8px !important;
     padding: 5px 10px !important;
     margin: var(--arrowpanel-menuitem-margin) !important;
@@ -147,6 +147,17 @@
   #PanelUI-fxa-menu-syncnow-button hbox label.syncnow-label {
     margin-left: -30px !important;
     padding-left: 15px !important;
+  }
+
+  .PanelUI-tabitem-container.all-tabs-item {
+    margin: var(--arrowpanel-menuitem-margin) !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+  }
+
+  .all-tabs-button.subviewbutton.subviewbutton-iconic {
+    padding: 5px 10px 5px calc(10px + var(--uc-arrowpanel-menuicon-margin-inline)) !important;
+    border-radius: 8px !important;
   }
 
   /* Tidy Up Extenstion */
