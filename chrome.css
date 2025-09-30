@@ -87,12 +87,12 @@
           [overflowedItem="true"]
         )
         > toolbarbutton
-    ):not(.all-tabs-button):not(.remote-tabs-close-button) {
+    ):not(.all-tabs-button):not(.remote-tabs-close-button):not(#zen-sidebar-foot-buttons *):not(#zen-sidebar-foot-buttons) {
     border-radius: 8px !important;
     padding: 5px 10px !important;
     margin: var(--arrowpanel-menuitem-margin) !important;
   }
-
+  
   .remote-tabs-close-button {
     border-radius: 8px !important;
     padding: 5px !important;
